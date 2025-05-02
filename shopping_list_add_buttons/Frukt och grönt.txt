@@ -1,0 +1,16 @@
+Tomat
+Gurka
+Paprika
+
+Sallad
+Vitkål
+Broccoli
+
+Vitlök
+Gul lök
+Röd Lök
+
+Bakpotatis
+Banan
+Äpple
+Granatäpple

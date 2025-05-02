@@ -1,5 +1,6 @@
 import sys
 import os
+import glob
 
 
 def generate_button(value):
@@ -43,7 +44,7 @@ def generate_yaml(input_file, output_file):
         #Grid card
         output = "type: grid\ncards:"
         
-        output += generate_heading(title)
+        #output += generate_heading(title)
         for item in groceries:
             if item:
                 output += generate_button(item)
@@ -59,16 +60,15 @@ def generate_yaml(input_file, output_file):
         print("Error: Input file not found. Please provide a valid file path.")
 
 # Example usage:
-if len(sys.argv) < 2:
-    print("Usage: python script.py <input_file>")
-else:
-    try:
-        os.makedirs("out", exist_ok=True)
-    except:
-        pass
-    
-    input_file = sys.argv[1]
+txt_files = glob.glob("*.txt")
+
+try:
+    os.makedirs("out", exist_ok=True)
+except:
+    pass
+
+#Generate files fo all our txt files
+for input_file in txt_files:
     output_file = f"out/{input_file}"
-    
     generate_yaml(input_file, output_file)
 
